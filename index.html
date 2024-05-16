@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WikiMarvel</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Teachers:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+  <header class="border-bottom lh-1 py-3">
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-md-4 text-md-end"> 
+                <a class="links" href="personajes.html">PERSONAJES</a>
+            </div>
+            <div class="col-md-4 text-center"> 
+                <a href="index.html"><img src="img/logo.png" width="40%"></a>
+            </div>
+            <div class="col-md-4 text-md-start"> 
+                <a class="links" href="comics.html">COMICS</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel" bis_skin_checked="1">
+  <div class="carousel-indicators" bis_skin_checked="1">
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
+  </div>
+  <div class="carousel-inner" bis_skin_checked="1">
+    <div class="carousel-item" bis_skin_checked="1">
+      <img src="img/mb_PLP_Marvel_20220404_2x.webp" class="bd-placeholder-img" height="auto"  width="100%"aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false" alt="Descripción de tu imagen">
+
+      <div class="container" bis_skin_checked="1">
+        <div class="carousel-caption text-start" bis_skin_checked="1">
+          <h1>¡Explora el Universo Marvel!</h1>
+          <p class="fs-5">Sumérgete en las páginas de aventura, poder y emoción que solo los cómics de Marvel pueden ofrecerte.</p>
+          <p><a class="btn btn-lg btn-danger" href="comics.html">Ir a comics</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item active" bis_skin_checked="1">
+      <img src="img/banner3.jpg" class="bd-placeholder-img" height="auto" width="100%"aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false" alt="Descripción de tu imagen" style="opacity: 0.7;">
+      <div class="container" bis_skin_checked="1">
+        <div class="carousel-caption" bis_skin_checked="1">
+          <h1 class="text-dark">Cuando DC está detrás, pero tú solo piensas en Marvel</h1>
+          <p class="text-dark fs-5">¡No importa el fondo, nosotros tenemos todo lo que necesitas para alimentar tu obsesión por los cómics de Marvel!</p>
+          <p><a class="btn btn-lg btn-primary" href="https://github.com/thatfiredev/dc-villains-api">No presionar</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item" bis_skin_checked="1">
+      <img src="img/banner2.jpg" class="bd-placeholder-img" height="auto" width="100%"aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false" alt="Descripción de tu imagen">
+      <div class="container" bis_skin_checked="1">
+        <div class="carousel-caption text-end" bis_skin_checked="1">
+          <h1>¡Únete al Universo Marvel!</h1>
+          <p class="fs-5">Descubre el mundo de los héroes más icónicos, los villanos más temibles y las historias más épicas.</p>
+          <p><a class="btn btn-lg btn-danger" href="personajes.html">Ir a personajes</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+  
+  <div class="container px-4 py-5" id="custom-cards" bis_skin_checked="1">
+    <h2 class="pb-2 border-bottom">Personajes mas famosos:</h2>
+    <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5" bis_skin_checked="1">
+      <div class="col" bis_skin_checked="1">
+        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('img/spider-man.jpg'); background-size: cover; background-repeat: no-repeat;" bis_skin_checked="1">
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1" bis_skin_checked="1">
+            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Spider-Man</h3>
+            <ul class="d-flex list-unstyled mt-auto">
+              <li class="me-auto">
+                <p><a class="btn btn-lg btn-danger" href="http://marvel.com/comics/characters/1009610/spider-man_peter_parker?utm_campaign=apiRef&utm_source=ca1c2b6e8c6bf691ac82e03e1bf9574d">Conocer mas...</a></p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col" bis_skin_checked="1">
+        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('img/daredevil.jpg'); background-size: cover; background-repeat: no-repeat;" bis_skin_checked="1">
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1" bis_skin_checked="1">
+            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">DareDevil</h3>
+            <ul class="d-flex list-unstyled mt-auto">
+              <li class="me-auto">
+                <p><a class="btn btn-lg btn-danger" href="http://marvel.com/comics/characters/1009262/daredevil?utm_campaign=apiRef&utm_source=ca1c2b6e8c6bf691ac82e03e1bf9574d">Conocer mas...</a></p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col" bis_skin_checked="1">
+        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('img/wolverine.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center;" bis_skin_checked="1">
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1" bis_skin_checked="1">
+            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Wolverine</h3>
+            <ul class="d-flex list-unstyled mt-auto">
+              <li class="me-auto">
+                <p><a class="btn btn-lg btn-danger" href="http://marvel.com/comics/characters/1009718/wolverine?utm_campaign=apiRef&utm_source=ca1c2b6e8c6bf691ac82e03e1bf9574d">Conocer mas...</a></p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container-xl">
+    <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary" bis_skin_checked="1" style="margin-top: 2%; background-image: url(img/capitan-universo.jpg); background-position: center; background-repeat: no-repeat; ">
+      <div class="col-lg-6 px-0" bis_skin_checked="1" style="font-family: 'Comic Sans MS', cursive; font-size: 30 px; font-weight: bold; color: white;">
+        <h1 class="display-4 fw-semibold">¿Sabías que...</h1>
+        <p class="lead my-3 fw-medium">Spider-Man ha sido de las pocas personas que se han convertido en el Capitán Universo?</p>
+        <p class="lead mb-0"><a href="#" style=" color: white;">Sigue leyendo...</a></p>
+
+      </div>
+    </div>  
+  </div>
+
+  <div class = "container-xl" style="text-align: center; margin-top: 5%; margin-bottom: 5%;">
+    <div class="row featurette" bis_skin_checked="1">
+      <div class="col-md-7" bis_skin_checked="1" style="text-align: center; margin-top: 4%" >
+        <h2 class="featurette-heading fw-normal fs-1">Conoce al Equipo detrás del Universo Marvel</h2>
+
+        <p class="lead">¡Somos apasionados del mundo Marvel! Desde héroes legendarios hasta villanos inolvidables, nuestro equipo está comprometido a proporcionarte la mejor información sobre tus personajes y cómics favoritos.</p>
+      </div>
+      <div class="col-md-5" bis_skin_checked="1">
+      <img src="img/thanos.jpg" width="100%">
+        
+      </div>
+      
+    </div>
+  </div>
+
+  <div class="container marketing">
+
+
+ <h2 class="pb-2 border-bottom">Developers:</h2>
+    <div class= "bis_skin_checked=1">
+  
+    <div class="row" style=" justify-content: center; text-align: center; margin-top: 10%;">
+      <div class="col-lg-4">
+        <img class="bd-placeholder-img rounded-circle" width="45%" height="140"  src="img/SERCH.png" width="100%">
+        <h2 class="fw-normal">SERCH</h2>
+        <p>Junior javascript</p>
+      </div>
+      <div class="col-lg-4">
+        <img class="bd-placeholder-img rounded-circle" width="45%" height="140"  src="img/orlando.png" width="100%">
+        <h2 class="fw-normal">HUERTITA GAMER</h2>
+        <p>Junior UX</p>
+     
+      </div>
+      <div class="col-lg-4">
+        <img class="bd-placeholder-img rounded-circle" width="45%" height="140"  src="img/solano.png" width="100%">
+        <h2 class="fw-normal">SOLANITO</h2>
+        <p>Le gustan las junior</p>
+
+      </div>
+    </div>
+  </div>
+  
+  <footer class = "bg text-dark pt-5 pb-4" style="margin-top: 5%;">
+      <ul class="nav justify-content-center mb-1">
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Personajes</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Comics</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Sobre nosotros</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Surprise</a></li>
+      </ul>
+
+        <hr class = "mb-4">
+
+        <div class = "text-center mb-2">
+
+          <p>Copyright Todos los derechos reservados
+            <a href="#">
+              <strong class = "text-body-secondary">Solano</strong>
+            </a>
+          </p>
+        </div>
+        <div class = "text-center">
+          <ul class = "list-unstyled lis-inline">
+            <li class = "list-inline-item">
+              <a href="https://www.facebook.com/luisfrancisco.solanobennett?locale=es_LA" class = "text-dark"> <i class = "fab fa-facebook-f"></i> </a>
+            </li>
+            <li class = "list-inline-item">
+              <a href="https://twitter.com/Luisillo0w0" class = "text-dark"> <i class = "fab fa-twitter"></i> </a>
+            </li>
+            <li class = "list-inline-item">
+              <a href="https://www.google.com/search?client=opera-gx&q=luis+francisco+solano+bennet&sourceid=opera&ie=UTF-8&oe=UTF-8" class = "text-dark"> <i class = "fab fa-google"></i> </a>
+            </li>
+            <li class = "list-inline-item">
+              <a href="https://www.instagram.com/luisf.s.b/" class = "text-dark"> <i class = "fab fa-instagram"></i> </a>
+            </li>
+            <li class = "list-inline-item">
+              <a href="https://www.linkedin.com/in/luis-mario-torres-moreno-6676a21b3/" class = "text-dark"> <i class = "fab fa-linkedin"></i> </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
