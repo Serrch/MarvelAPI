@@ -7,10 +7,21 @@
     box-sizing: border-box;
 }
 
+.img-marvel{
+    transition: transform .3s ease-out 0s;
+    transition:0.5s;
+}
+
+.img-marvel:hover{
+    transform: scale(1.05);
+}
+
 .links{
     text-decoration: none;
     color: #000;
     font-size: larger;
+    transition: transform .3s ease-out 0s;
+    transition:0.5s;
 }
 
 
@@ -28,8 +39,8 @@
     aspect-ratio: 16/9;
     object-fit: cover;
 }
-
-.card {
+ 
+.card { 
     min-height: 100%; 
     transition: transform .3s ease-out 0s;
     transition:0.5s;
@@ -77,3 +88,24 @@
     content: '';
     pointer-events: none;
   }
+
+  .banner {
+    position: relative;
+    background-size: cover;
+}
+
+.banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.39); /* Ajusta la opacidad según sea necesario */
+    z-index: 1;
+}
+
+.banner .col-lg-6 {
+    position: relative;
+    z-index: 2;
+}
