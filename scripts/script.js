@@ -109,7 +109,7 @@ async function ExtraerDataComics(id) {
     try {
         const comicData = await getComics(id);
         if (comicData && comicData.data && comicData.data.results) {
-            for (let i = 0; i < comicData.data.results.length && i < 6; i++) {
+            for (let i = 0; i < comicData.data.results.length && i < 3; i++) {
                 const comic = comicData.data.results[i];
                 const { id, title, description, thumbnail, urls } = comic;
                 const image = thumbnail.path + '.' + thumbnail.extension;
