@@ -265,7 +265,8 @@ campoBusqueda.addEventListener('input', async () => {
             
                         var encodedInfoPersonaje = encodeURIComponent(JSON.stringify(infoPer));
                         var encodedComics = encodeURIComponent(JSON.stringify(comics));
-                        var URL = "Desc.html?items=" + encodedInfoPersonaje + "&Comics=" + encodedComics;
+                        //var URL = "Desc.html?items=" + encodedInfoPersonaje + "&Comics=" + encodedComics;
+                        var URL = "https://serrch.github.io/MarvelAPI/Desc.html?items="+ encodedInfoPersonaje + "&Comics=" + encodedComics;
                         window.location.href=URL;
     
                         if (comicLinkURL) {
