@@ -240,7 +240,7 @@ campoBusqueda.addEventListener('input', async () => {
                         name: name,
                         description: description || `${name} does not have description`,
                         image: image,
-                        wikiLinkURL: wikiLinkURL
+                        comicLinkURL: wikiLinkURL
                     };
 
                     divPersonaje.innerHTML = `

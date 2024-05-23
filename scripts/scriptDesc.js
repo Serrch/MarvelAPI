@@ -27,6 +27,11 @@ document.addEventListener("DOMContentLoaded", function() {
                     <p class="lead">${itemsObj.description}</p>
                     <p>Algunos comics</p>
                     <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-3" id="comicDiv"></div>
+                    <div style="margin-top: 20px;">
+                        <a href="${itemsObj.comicLinkURL}" target="_blank">
+                            <button class="btn btn-lg btn-danger">Ver más comics</button>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
