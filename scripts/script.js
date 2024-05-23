@@ -104,37 +104,40 @@ async function getComics(id) {
 }
 
 /* Extraer info COMICS */
-async function ExtraerDataComics(id, name) {
+async function ExtraerDataComics(id) {
+    let arrComics = [];
     try {
         const comicData = await getComics(id);
+        if (comicData && comicData.data && comicData.data.results) {
+            for (let i = 0; i < comicData.data.results.length && i < 9; i++) {
+                const comic = comicData.data.results[i];
+                const { id, title, description, thumbnail, urls } = comic;
+                const image = thumbnail.path + '.' + thumbnail.extension;
 
-        for (let i = 0; i < 5; i++) {
-            const comic = comicData.data.results[i];
-            const { id, title, description, thumbnail, urls } = comic;
-            const image = thumbnail.path + '.' + thumbnail.extension;
-
-            let comicLinkURL = "";
-            if (urls && urls.length > 0) {
-                const comicLink = urls.find(url => url.type === "detail");
-                if (comicLink) {
-                    comicLinkURL = comicLink.url;
+                let comicLinkURL = "";
+                if (urls && urls.length > 0) {
+                    const comicLink = urls.find(url => url.type === "detail");
+                    if (comicLink) {
+                        comicLinkURL = comicLink.url;
+                    }
                 }
-            }
 
-            const infoComic = {
-                id: id,
-                name: title,
-                description: description,
-                image: image,
-                comicLinkURL: comicLinkURL
-            };
-            arrComics.push(infoComic);
-            console.log(`----COMIC DE ${name} ----`);
-            console.log(infoComic);
+                const infoComic = {
+                    id: id,
+                    name: title,
+                    description: description || "Descripción no disponible.",
+                    image: image,
+                    comicLinkURL: comicLinkURL
+                };
+                arrComics.push(infoComic);
+            }
+        } else {
+            console.log("No se encontraron datos de cómics.");
         }
     } catch (error) {
         console.error("Ocurrió un error en la obtención de datos:", error); 
     }
+    return arrComics;
 }
 
 async function ImprimirPersonajes() {
@@ -160,8 +163,14 @@ async function ImprimirPersonajes() {
 
         contPersonajes.appendChild(divPersonaje);
 
-        divPersonaje.addEventListener('click', function () {
+        divPersonaje.addEventListener('click', async function () {
+            appendAlert("Cargando informacion, porfavor espere", "success");
             const comicLinkURL = this.dataset.comicLinkURL;
+            const comics = await ExtraerDataComics(infoPersonaje.id);
+            var encodedInfoPersonaje = encodeURIComponent(JSON.stringify(infoPersonaje));
+            var encodedComics = encodeURIComponent(JSON.stringify(comics));
+            var URL = "Desc.html?items=" + encodedInfoPersonaje + "&Comics=" + encodedComics;
+            window.location.href=URL;
             if (comicLinkURL) {
                 window.open(comicLinkURL, '_blank');
             } else {
@@ -213,7 +222,7 @@ campoBusqueda.addEventListener('input', async () => {
                     const divPersonaje = document.createElement('div');
                     divPersonaje.classList.add('personaje');
 
-                    const { name, description, thumbnail, urls } = personaje;
+                    const { id,name, description, thumbnail, urls } = personaje;
                     const image = `${thumbnail.path}.${thumbnail.extension}`;
 
                     divPersonaje.classList.add('col-md-4', 'col-6');
@@ -225,6 +234,14 @@ campoBusqueda.addEventListener('input', async () => {
                             wikiLinkURL = wikiLink.url;
                         }
                     }
+
+                    const infoPer = {
+                        id: id,
+                        name: name,
+                        description: description || `${name} does not have description`,
+                        image: image,
+                        wikiLinkURL: wikiLinkURL
+                    };
 
                     divPersonaje.innerHTML = `
                     <div class="card">
@@ -240,11 +257,21 @@ campoBusqueda.addEventListener('input', async () => {
 
                     contPersonajes.appendChild(divPersonaje);
 
-                    divPersonaje.addEventListener('click', function () {
-                        if (wikiLinkURL) {
-                            window.open(wikiLinkURL, '_blank');
+
+                    divPersonaje.addEventListener('click', async function () {
+                        appendAlert("Cargando informacion, porfavor espere", "success");
+                        const comicLinkURL = this.dataset.comicLinkURL;
+                        const comics = await ExtraerDataComics(infoPer.id);
+            
+                        var encodedInfoPersonaje = encodeURIComponent(JSON.stringify(infoPer));
+                        var encodedComics = encodeURIComponent(JSON.stringify(comics));
+                        var URL = "Desc.html?items=" + encodedInfoPersonaje + "&Comics=" + encodedComics;
+                        window.location.href=URL;
+    
+                        if (comicLinkURL) {
+                            window.open(comicLinkURL, '_blank');
                         } else {
-                            console.log('No hay enlace de la wiki disponible para este personaje.');
+                            console.log('No hay enlace de cómic disponible para este personaje.');
                         }
                     });
                 });
