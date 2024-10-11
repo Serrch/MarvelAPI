@@ -28,6 +28,7 @@ Proyecto enfocado a consumir datos de la MarvelAPI, el proyecto obtiene los dato
   </a>
 </div>
 </ul>
+
 ## Tecnologías Utilizadas
 - HTML5, CSS3
 - JavaScript (ES6+)
